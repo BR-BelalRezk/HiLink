@@ -4,7 +4,7 @@ import { FEATURES } from "./constants";
 export default function Features() {
   return (
     <section className="flex-col flexCenterr overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
-      <div className="max-container padding-conatiner relative w-full justify-end flex">
+      <div className="max-container padding-container relative w-full justify-end flex">
         <div className="flex flex-1 lg:min-h-[900px]">
           <Image
             src={"/phone.png"}
@@ -46,13 +46,15 @@ function FeatureItem({
     description: string;
   };
 }) {
-  return <li className="flex w-full flex-1 flex-col items-start">
-    <div className="rounded-full p-5 lg:p-7 bg-green-50">
-      <Image src={feature.icon} alt={feature.title} width={30} height={30}/>
-     </div>
-     <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
-      {feature.title}
-     </h2>
-     <p className="regular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">{feature.description}</p>
-  </li>;
+  return (
+    <li className="flex w-full flex-1 flex-col items-start">
+      <div className="rounded-full p-5 lg:p-7 bg-green-50">
+        <Image src={feature.icon} alt={feature.title} width={30} height={30} />
+      </div>
+      <h2 className="bold-20 lg:bold-32 mt-5 capitalize">{feature.title}</h2>
+      <p className="regular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">
+        {feature.description}
+      </p>
+    </li>
+  );
 }
